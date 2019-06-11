@@ -14,18 +14,12 @@
     --PRIMARY-COLOR-900: #2A3136;
 }
 
-.fa, .fab, .fal, .far, .fas {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    line-height: 1;
+.fa svg, .fab svg, .fal svg, .far svg, .fas svg {
+	display: inline-block;
 	height: 1em;
-	width: auto;
+	line-height: inherit;
+	vertical-align: middle;
 }
-
-	.fa svg, .fab svg, .fal svg, .far svg, .fas svg {
-		display: inline-block;
-	}
 
 .fa-fw {
 	width: 1.25em;
