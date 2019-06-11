@@ -336,9 +336,12 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     display: block;
 	position: absolute;
 	top: 50%;
-	font-size: .65em;
+	width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: .75em;
 	color: var(--PRIMARY-COLOR-500);
-	padding: .6em .5em .4em;
 	left: calc(1.5rem + 1px);
 	transform: translate(-50%, -50%);
 	z-index: 2;
