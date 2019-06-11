@@ -22,7 +22,7 @@
 }
 
 .fa-fw svg {
-	width: 1.5em;
+	width: 1.25em;
 	text-align: center;
 }
 
@@ -494,11 +494,11 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 		padding: .5em 1em;
 	}
 
-	.entry-nav .btn.prev {
+	.entry-nav .btn.nav-prev {
 		padding-left: .5em;
 	}
 
-	.entry-nav .btn.next {
+	.entry-nav .btn.nav-next {
 		padding-right: .5em;
 	}
 

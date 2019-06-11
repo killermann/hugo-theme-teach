@@ -111,107 +111,6 @@ jQuery(document).ready(function() {
         location.reload();
         return false;
     });
-    jQuery('[data-search-toggle]').on('click', function() {
-        if (sidebarStatus == 'closed') {
-            jQuery('[data-sidebar-toggle]').trigger('click');
-            jQuery(document.body).removeClass('searchbox-hidden');
-            searchStatus = 'open';
-
-            return false;
-        }
-
-        jQuery(document.body).toggleClass('searchbox-hidden');
-        searchStatus = (jQuery(document.body).hasClass('searchbox-hidden') ? 'closed' : 'open');
-
-        return false;
-    });
-
-    var ajax;
-    jQuery('[data-search-input]').on('input', function() {
-        var input = jQuery(this),
-            value = input.val(),
-            items = jQuery('[data-nav-id]');
-        items.removeClass('search-match');
-        if (!value.length) {
-            $('ul.topics').removeClass('searched');
-            items.css('display', 'block');
-            sessionStorage.removeItem('search-value');
-            $(".highlightable").unhighlight({ element: 'mark' })
-            return;
-        }
-
-        sessionStorage.setItem('search-value', value);
-        $(".highlightable").unhighlight({ element: 'mark' }).highlight(value, { element: 'mark' });
-
-        if (ajax && ajax.abort) ajax.abort();
-
-        jQuery('[data-search-clear]').on('click', function() {
-            jQuery('[data-search-input]').val('').trigger('input');
-            sessionStorage.removeItem('search-input');
-            $(".highlightable").unhighlight({ element: 'mark' })
-        });
-    });
-
-    $.expr[":"].contains = $.expr.createPseudo(function(arg) {
-        return function( elem ) {
-            return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-        };
-    });
-
-    if (sessionStorage.getItem('search-value')) {
-        var searchValue = sessionStorage.getItem('search-value')
-        $(document.body).removeClass('searchbox-hidden');
-        $('[data-search-input]').val(searchValue);
-        $('[data-search-input]').trigger('input');
-        var searchedElem = $('#body-inner').find(':contains(' + searchValue + ')').get(0);
-        if (searchedElem) {
-            searchedElem.scrollIntoView(true);
-            var scrolledY = window.scrollY;
-            if(scrolledY){
-                window.scroll(0, scrolledY - 125);
-            }
-        }
-    }
-
-    // clipboard
-    var clipInit = false;
-    $('code').each(function() {
-        var code = $(this),
-            text = code.text();
-
-        if (text.length > 5) {
-            if (!clipInit) {
-                var text, clip = new ClipboardJS('.copy-to-clipboard', {
-                    text: function(trigger) {
-                        text = $(trigger).prev('code').text();
-                        return text.replace(/^\$\s/gm, '');
-                    }
-                });
-
-                var inPre;
-                clip.on('success', function(e) {
-                    e.clearSelection();
-                    inPre = $(e.trigger).parent().prop('tagName') == 'PRE';
-                    $(e.trigger).attr('aria-label', 'Copied to clipboard!').addClass('tooltipped tooltipped-' + (inPre ? 'w' : 's'));
-                });
-
-                clip.on('error', function(e) {
-                    inPre = $(e.trigger).parent().prop('tagName') == 'PRE';
-                    $(e.trigger).attr('aria-label', fallbackMessage(e.action)).addClass('tooltipped tooltipped-' + (inPre ? 'w' : 's'));
-                    $(document).one('copy', function(){
-                        $(e.trigger).attr('aria-label', 'Copied to clipboard!').addClass('tooltipped tooltipped-' + (inPre ? 'w' : 's'));
-                    });
-                });
-
-                clipInit = true;
-            }
-
-            code.after('<span class="copy-to-clipboard" title="Copy to clipboard" />');
-            code.next('.copy-to-clipboard').on('mouseleave', function() {
-                $(this).attr('aria-label', null).removeClass('tooltipped tooltipped-s tooltipped-w');
-            });
-        }
-    });
 
     // allow keyboard control for prev/next links
     jQuery(function() {
@@ -245,24 +144,6 @@ jQuery(document).ready(function() {
     $('#top-bar a:not(:has(img)):not(.btn)').addClass('highlight');
     $('#body-inner a:not(:has(img)):not(.btn):not(a[rel="footnote"])').addClass('highlight');
 
-    var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
-    if (!touchsupport){ // browser doesn't support touch
-        $('#toc-menu').hover(function() {
-            $('.progress').stop(true, false, true).fadeToggle(100);
-        });
-
-        $('.progress').hover(function() {
-            $('.progress').stop(true, false, true).fadeToggle(100);
-        });
-    }
-    if (touchsupport){ // browser does support touch
-        $('#toc-menu').click(function() {
-            $('.progress').stop(true, false, true).fadeToggle(100);
-        });
-        $('.progress').click(function() {
-            $('.progress').stop(true, false, true).fadeToggle(100);
-        });
-    }
 
     /**
     * Fix anchor scrolling that hides behind top nav bar
@@ -379,82 +260,61 @@ jQuery(window).on('load', function() {
     $(".highlightable").highlight(sessionStorage.getItem('search-value'), { element: 'mark' });
 });
 
-$(function() {
-    $('a[rel="lightbox"]').featherlight({
-        root: 'section#body'
-    });
-});
-
-jQuery.extend({
-    highlight: function(node, re, nodeName, className) {
-        if (node.nodeType === 3) {
-            var match = node.data.match(re);
-            if (match) {
-                var highlight = document.createElement(nodeName || 'span');
-                highlight.className = className || 'highlight';
-                var wordNode = node.splitText(match.index);
-                wordNode.splitText(match[0].length);
-                var wordClone = wordNode.cloneNode(true);
-                highlight.appendChild(wordClone);
-                wordNode.parentNode.replaceChild(highlight, wordNode);
-                return 1; //skip added node in parent
-            }
-        } else if ((node.nodeType === 1 && node.childNodes) && // only element nodes that have children
-            !/(script|style)/i.test(node.tagName) && // ignore script and style nodes
-            !(node.tagName === nodeName.toUpperCase() && node.className === className)) { // skip if already highlighted
-            for (var i = 0; i < node.childNodes.length; i++) {
-                i += jQuery.highlight(node.childNodes[i], re, nodeName, className);
-            }
-        }
-        return 0;
+// Get Parameters from some url
+var getUrlParameter = function getUrlParameter(sPageURL) {
+    var url = sPageURL.split('?');
+    var obj = {};
+    if (url.length == 2) {
+      var sURLVariables = url[1].split('&'),
+          sParameterName,
+          i;
+      for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+          obj[sParameterName[0]] = sParameterName[1];
+      }
+      return obj;
+    } else {
+      return undefined;
     }
-});
-
-jQuery.fn.unhighlight = function(options) {
-    var settings = {
-        className: 'highlight',
-        element: 'span'
-    };
-    jQuery.extend(settings, options);
-
-    return this.find(settings.element + "." + settings.className).each(function() {
-        var parent = this.parentNode;
-        parent.replaceChild(this.firstChild, this);
-        parent.normalize();
-    }).end();
 };
 
-jQuery.fn.highlight = function(words, options) {
-    var settings = {
-        className: 'highlight',
-        element: 'span',
-        caseSensitive: false,
-        wordsOnly: false
-    };
-    jQuery.extend(settings, options);
+// Execute actions on images generated from Markdown pages
+var images = $("div#body-inner img").not(".inline");
+// Wrap image inside a featherlight (to get a full size view in a popup)
+images.wrap(function(){
+  var image =$(this);
+  if (!image.parent("a").length) {
+    return "<a href='" + image[0].src + "' data-featherlight='image'></a>";
+  }
+});
 
-    if (!words) { return; }
-
-    if (words.constructor === String) {
-        words = [words];
+// Change styles, depending on parameters set to the image
+images.each(function(index){
+  var image = $(this)
+  var o = getUrlParameter(image[0].src);
+  if (typeof o !== "undefined") {
+    var h = o["height"];
+    var w = o["width"];
+    var c = o["classes"];
+    image.css("width", function() {
+      if (typeof w !== "undefined") {
+        return w;
+      } else {
+        return "auto";
+      }
+    });
+    image.css("height", function() {
+      if (typeof h !== "undefined") {
+        return h;
+      } else {
+        return "auto";
+      }
+    });
+    if (typeof c !== "undefined") {
+      var classes = c.split(',');
+      for (i = 0; i < classes.length; i++) {
+        image.addClass(classes[i]);
+      }
     }
-    words = jQuery.grep(words, function(word, i) {
-        return word != '';
-    });
-    words = jQuery.map(words, function(word, i) {
-        return word.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-    });
-    if (words.length == 0) { return this; }
-    ;
-
-    var flag = settings.caseSensitive ? "" : "i";
-    var pattern = "(" + words.join("|") + ")";
-    if (settings.wordsOnly) {
-        pattern = "\\b" + pattern + "\\b";
-    }
-    var re = new RegExp(pattern, flag);
-
-    return this.each(function() {
-        jQuery.highlight(this, re, settings.element, settings.className);
-    });
-};
+  }
+});
