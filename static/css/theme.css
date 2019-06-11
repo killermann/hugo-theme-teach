@@ -11,15 +11,25 @@
     --PRIMARY-COLOR-300: #B9C7D0;
     --PRIMARY-COLOR-500: #8E9BA5;
     --PRIMARY-COLOR-700: #5A6A74;
-    --PRIMARY-COLOR-900: #22272B;
+    --PRIMARY-COLOR-900: #2A3136;
 }
 
-.button, .button-secondary {
+.fa, .fab, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     display: inline-block;
-    padding: 7px 12px;
+    line-height: 1;
+	height: 1em;
+	width: auto;
 }
-.button:active, .button-secondary:active {
-    margin: 2px 0 -2px 0;
+
+	.fa svg, .fab svg, .fal svg, .far svg, .fas svg {
+		display: inline-block;
+	}
+
+.fa-fw {
+	width: 1.25em;
+	text-align: auto;
 }
 
 .visually-hidden { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
@@ -407,7 +417,12 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 }
 
 	.entry-footer a {
-		color: #595959;
+		color: var(--PRIMARY-COLOR-900);
+		opacity: .8;
+	}
+
+	.entry-footer a:hover {
+		opacity: 1;
 	}
 
 	.entry-footer a span {
@@ -600,7 +615,6 @@ div.notices.tip p:first-child:after {
   background-image: none;
   border: 2px solid var(--PRIMARY-COLOR-500);
   color: var(--PRIMARY-COLOR-900);
-
   border-radius: 100px;
   -webkit-transition: all 0.15s;
      -moz-transition: all 0.15s;
@@ -621,6 +635,8 @@ div.notices.tip p:first-child:after {
 .btn:hover,
 .btn:focus {
   text-decoration: none;
+  border-color: var(--PRIMARY-COLOR-300);
+  color: var(--PRIMARY-COLOR-500);
 }
 
 	.btn .icon {
