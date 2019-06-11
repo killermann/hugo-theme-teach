@@ -43,12 +43,12 @@ body {
 }
 
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
-    body #chapter h1 {
+    #chapter h1 {
         font-size: 3rem;
     }
 }
 @media only all and (max-width: 47.938em) {
-    body #chapter h1 {
+    #chapter h1 {
         font-size: 2.5rem;
     }
 }
@@ -461,12 +461,12 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     text-align: center;
 	font-size: 1.5rem;
 	font-weight: 400;
-	margin: 0;
+	margin: 4vw auto 0;
 }
 #chapter h1 {
-    font-size: 5rem;
+    font-size: 3.6rem;
     border-bottom: 4px dashed var(--PRIMARY-COLOR-100);
-	padding: 6vh auto .5em;
+	padding: 0 0 .5em;
 	margin: .25em auto .5em;
 }
 
