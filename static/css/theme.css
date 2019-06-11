@@ -8,7 +8,7 @@
 
 	/* Set the Primary Colors */
     --PRIMARY-COLOR-100: #EAEFF2;
-    --PRIMARY-COLOR-300: #B9C7D0;
+    --PRIMARY-COLOR-300: #CCD7DE;
     --PRIMARY-COLOR-500: #8E9BA5;
     --PRIMARY-COLOR-700: #5A6A74;
     --PRIMARY-COLOR-900: #2A3136;
@@ -16,7 +16,7 @@
 
 .fa svg, .fab svg, .fal svg, .far svg, .fas svg {
 	display: inline-block;
-	height: 1em;
+	height: 1.1em;
 	line-height: 1;
 	vertical-align: text-bottom;
 }
@@ -45,7 +45,7 @@ body {
 body #chapter h1 {
     font-size: 3.5rem;
 	padding-bottom: .5em;
-	margin-bottom: .5em;
+	margin: .25em auto .5em;
 }
 
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
