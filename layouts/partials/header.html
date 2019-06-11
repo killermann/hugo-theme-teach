@@ -9,7 +9,6 @@
         <title>{{ .Title }} :: {{ .Site.Title }}</title>
 
         {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
-        <link href="{{"css/nucleus.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
         <script src="https://kit.fontawesome.com/7cbc8ab378.js"></script>
         <link href="{{"css/hybrid.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
         <link href="{{"css/featherlight.min.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
