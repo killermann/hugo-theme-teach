@@ -17,13 +17,13 @@
 .fa svg, .fab svg, .fal svg, .far svg, .fas svg {
 	display: inline-block;
 	height: 1em;
-	line-height: inherit;
-	vertical-align: middle;
+	line-height: 1;
+	vertical-align: text-bottom;
 }
 
-.fa-fw {
-	width: 1.25em;
-	text-align: auto;
+.fa-fw svg {
+	width: 1.5em;
+	text-align: center;
 }
 
 .visually-hidden { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
