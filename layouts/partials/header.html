@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{ .Page.Language | default "en" }}" class="js csstransforms3d">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {{ .Hugo.Generator }}
+        {{ partial "meta.html" . }}
+        {{ partial "favicon.html" . }}
+        <title>{{ .Title }} :: {{ .Site.Title }}</title>
+
+        {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
+        <link href="{{"css/nucleus.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/7cbc8ab378.js"></script>
+        <link href="{{"css/hybrid.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+        <link href="{{"css/featherlight.min.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+        <link href="{{"css/perfect-scrollbar.min.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+        <link href="{{"css/auto-complete.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+        <link href="{{"css/atom-one-dark-reasonable.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+        <link href="{{"css/theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+        <link href="{{"css/hugo-theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+        {{with .Site.Params.themeVariant}}
+        <link href="{{(printf "css/theme-%s.css" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+        {{end}}
+
+        <script src="{{"js/jquery-3.3.1.min.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+
+        {{ partial "custom-header.html" . }}
+    </head>
+    <body class="{{ if .IsHome }}home{{ end }}" data-url="{{ .RelPermalink }}">
+        {{ partial "menu.html" . }}
+        <main id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+            <div id="top-bar">
+                <span id="sidebar-toggle-span">
+                    <a href="#" id="sidebar-toggle" title="Toggle Menu" data-sidebar-toggle="">
+                        <i class="far fa-fw fa-bars"></i>
+                        <i class="far fa-fw fa-times"></i>
+                    </a>
+                </span>
+                {{ if not .Params.chapter }}
+                <nav aria-label="Breadcrumb" id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span class="links">
+                        {{$showBreadcrumb := (and (not .Params.disableBreadcrumb) (not .Site.Params.disableBreadcrumb))}}
+                        {{if $showBreadcrumb}}
+                        {{ template "breadcrumb" dict "page" . "value" .Title }}
+                        {{ else }}
+                        {{ .Title }}
+                        {{ end }}
+                    </span>
+                </nav>
+                {{ end }}
+                {{ if .Params.discourse }}
+                <span id="header-discourse-link">
+                    <a href="{{ .Params.discourse }}" target="_blank" id="discourse-link" title="View Community Thread">
+                        <i class="far fa-comment-lines"></i>
+                    </a>
+                </span>
+                {{ end }}
+            </div>
+        {{ if .Params.chapter }}
+          <div id="chapter">
+        {{ end }}
+        <div id="body-inner">
+          {{if and (not .IsHome) (not .Params.chapter) }}
+            <h1 class="entry-title">
+              {{ if eq .Kind "taxonomy" }}
+                {{.Kind}} ::
+              {{ end }}
+              {{.Title}}
+            </h1>
+          {{end}}
+
+        {{define "breadcrumb"}}
+          {{$parent := .page.Parent }}
+          {{ if $parent }}
+            {{ $value := (printf "<a href='%s'>%s</a> > %s" $parent.URL $parent.Title .value) }}
+            {{ template "breadcrumb" dict "page" $parent "value" $value }}
+          {{else}}
+            {{.value|safeHTML}}
+          {{end}}
+        {{end}}
