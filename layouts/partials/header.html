@@ -30,10 +30,10 @@
                     </a>
                 </span>
                 {{ if not .Params.chapter }}
-                <nav aria-label="Breadcrumb" id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <nav aria-label="Breadcrumb" id="breadcrumbs" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span class="links">
                         {{$showBreadcrumb := (and (not .Params.disableBreadcrumb) (not .Site.Params.disableBreadcrumb))}}
-                        {{if $showBreadcrumb}}
+                        {{if $showBreadcrumb }}
                         {{ template "breadcrumb" dict "page" . "value" .Title }}
                         {{ else }}
                         {{ .Title }}
