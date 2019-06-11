@@ -9,7 +9,7 @@
         <title>{{ .Title }} | {{ .Site.Title }}</title>
 
         {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
-        <!-- <script src="https://kit.fontawesome.com/7cbc8ab378.js"></script> -->
+
         <link href="{{"css/theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
         {{with .Site.Params.themeVariant}}
         <link href="{{(printf "css/theme-%s.css" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
