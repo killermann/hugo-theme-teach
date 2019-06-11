@@ -495,11 +495,11 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 	}
 
 	.entry-nav .btn.nav-prev {
-		padding-left: .5em;
+		padding-left: .75em;
 	}
 
 	.entry-nav .btn.nav-next {
-		padding-right: .5em;
+		padding-right: .75em;
 	}
 
 #footer p {
