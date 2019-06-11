@@ -28,8 +28,11 @@ other = "Next"
 [Go-to-homepage]
 other = "Go to homepage"
 
+[Discuss]
+other = "Discuss"
+
 [Edit-this-page]
-other = "Edit this page"
+other = "Suggest edits"
 
 [Get-help]
 other = "Get help"
