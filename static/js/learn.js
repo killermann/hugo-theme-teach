@@ -255,9 +255,6 @@ jQuery(window).on('load', function() {
     for (var url in sessionStorage) {
         if (sessionStorage.getItem(url) == 1) jQuery('[data-nav-id="' + url + '"]').addClass('visited');
     }
-
-
-    $(".highlightable").highlight(sessionStorage.getItem('search-value'), { element: 'mark' });
 });
 
 // Get Parameters from some url
