@@ -6,24 +6,16 @@
         {{ .Hugo.Generator }}
         {{ partial "meta.html" . }}
         {{ partial "favicon.html" . }}
-        <title>{{ .Title }} :: {{ .Site.Title }}</title>
+        <title>{{ .Title }} | {{ .Site.Title }}</title>
 
         {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
         <script src="https://kit.fontawesome.com/7cbc8ab378.js"></script>
-        <link href="{{"css/hybrid.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
-        <link href="{{"css/featherlight.min.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
-        <link href="{{"css/perfect-scrollbar.min.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
-        <link href="{{"css/auto-complete.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
-        <link href="{{"css/atom-one-dark-reasonable.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
         <link href="{{"css/theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
-        <link href="{{"css/hugo-theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
         {{with .Site.Params.themeVariant}}
         <link href="{{(printf "css/theme-%s.css" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
         {{end}}
-
-        <script src="{{"js/jquery-3.3.1.min.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
-
         {{ partial "custom-header.html" . }}
+
     </head>
     <body class="{{ if .IsHome }}home{{ end }}" data-url="{{ .RelPermalink }}">
         {{ partial "menu.html" . }}
