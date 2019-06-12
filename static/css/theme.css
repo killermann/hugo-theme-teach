@@ -441,7 +441,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 	}
 
 #chapter {
-	padding: 4vw 0;
+	padding: 4vw 1rem;
 	max-width: 600px;
 	margin: 0 auto;
 }
