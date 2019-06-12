@@ -443,10 +443,10 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 	.type-wrap li {
 		position: relative;
 	}
-	
+
 	.type-wrap li > span.inline-svg {
 		position: absolute;
-	    left: -1.25em;
+	    left: -1.5em;
 	    background: white;
 	}
 
