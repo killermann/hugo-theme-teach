@@ -440,6 +440,16 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 		margin-right: auto;
 	}
 
+	.type-wrap li {
+		position: relative;
+	}
+	
+	.type-wrap li > span.inline-svg {
+		position: absolute;
+	    left: -1.25em;
+	    background: white;
+	}
+
 #chapter {
 	padding: 4vw 1rem;
 	max-width: 600px;
