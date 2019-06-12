@@ -28,6 +28,9 @@ other = "Next"
 [Go-to-homepage]
 other = "Go to homepage"
 
+[Reply]
+other = "Reply"
+
 [Discuss]
 other = "Discuss"
 
