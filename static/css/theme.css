@@ -14,11 +14,11 @@
     --PRIMARY-COLOR-900: #2A3136;
 }
 
-.fa svg, .fab svg, .fal svg, .far svg, .fas svg {
+.fa svg, .fab svg, .fal svg, .far svg, .fas svg, .inline-svg svg {
 	display: inline-block;
 	height: 1em;
 	line-height: 1;
-	margin-bottom: -.1em;
+	margin-bottom: -.125em;
 }
 
 .fa-fw svg {
