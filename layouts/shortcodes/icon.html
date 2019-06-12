@@ -1,0 +1,4 @@
+<span class="inline-icon" >
+{{- $fname:=print "images/icons/" ( .Get 0 ) ".svg" -}}
+{{ replace (readFile $fname) | safeHTML }}
+</span>
