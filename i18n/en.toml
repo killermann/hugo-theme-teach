@@ -16,8 +16,8 @@ other = "Whoops. Looks like this page doesn't exist ¯\\_(ツ)_/¯."
 [Get-started]
 other = "Get started"
 
-[Begin-lesson]
-other = "Begin lesson"
+[Begin]
+other = "Begin topic"
 
 [Back]
 other = "Back"
