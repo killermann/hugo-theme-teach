@@ -22,7 +22,6 @@
 			{{end}}
 		{{end}}
 		{{ $currentNode.Scratch.Set "prevPageTmp" .menu }}
-
 			{{ $currentNode.Scratch.Set "pages" .menu.Pages }}
 			{{ if .menu.IsHome}}
 				{{ $currentNode.Scratch.Set "pages" .menu.Sections }}
