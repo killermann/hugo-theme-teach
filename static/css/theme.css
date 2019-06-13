@@ -444,6 +444,10 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 		position: relative;
 	}
 
+	.type-wrap li + li{
+		margin-top: .5em;
+	}
+
 	.type-wrap li > span.inline-svg {
 		position: absolute;
 	    left: -1.5em;
