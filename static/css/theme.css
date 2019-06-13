@@ -1117,12 +1117,14 @@ td {
 	position: relative;
 	z-index: 9999;
 	padding: 10px;
+	line-height: 40px;
 }
 
 	#top-bar .far {
-		padding: 10px 1rem;
 		font-size: 28px;
 		text-align: center;
+		min-width: 40px;
+		display: block;
 	}
 
 	#top-bar .fa-times {
@@ -1145,6 +1147,7 @@ td {
     text-overflow: ellipsis;
     display: inline-block;
     float: left;
+	line-height: 40px;
 }
 #body #breadcrumbs span {
     padding: 0 0.1rem;
@@ -1185,11 +1188,6 @@ td {
 
 	#body .padding {
 		box-shadow: none;
-	}
-
-	#top-bar .far {
-		font-size: 18px;
-		padding: 11px;
 	}
 
     .sidebar-hidden #body {
