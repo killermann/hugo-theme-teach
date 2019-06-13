@@ -7,11 +7,11 @@
 	--serif: "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", "Times","Source Serif Pro", serif;
 
 	/* Set the Primary Colors */
-    --PRIMARY-COLOR-100: #EAEFF2;
-    --PRIMARY-COLOR-300: #CCD7DE;
-    --PRIMARY-COLOR-500: #8E9BA5;
-    --PRIMARY-COLOR-700: #5A6A74;
-    --PRIMARY-COLOR-900: #2A3136;
+    --PRIMARY-COLOR-100: #e8f4f8;
+    --PRIMARY-COLOR-300: #c6e3ee;
+    --PRIMARY-COLOR-500: #81bad0;
+    --PRIMARY-COLOR-700: #508aab;
+    --PRIMARY-COLOR-900: #254050;
 }
 
 .fa svg, .fab svg, .fal svg, .far svg, .fas svg, .inline-svg svg {
