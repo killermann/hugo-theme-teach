@@ -814,28 +814,6 @@ section.attachments.grey .attachments-files {
     margin-top: 5px;
 }
 
-code, kbd, pre, samp {
-    font-family: "Consolas", menlo, monospace;
-    font-size: 92%;
-}
-code {
-    border-radius: 2px;
-    white-space: nowrap;
-    color: #5e5e5e;
-    background: #FFF7DD;
-    border: 1px solid #fbf0cb;
-    padding: 0px 2px;
-}
-code + .copy-to-clipboard {
-    margin-left: -1px;
-    border-left: 0 !important;
-    font-size: inherit !important;
-    vertical-align: middle;
-    height: 21px;
-    top: 0;
-}
-
-
 pre {
     border: 3px dashed var(--PRIMARY-COLOR-300);
     border-radius: 20px;
@@ -845,12 +823,8 @@ pre {
     background: var(--PRIMARY-COLOR-100);
     overflow: visible;
     margin: 3em auto 2em;
-    color: var(--PRIMARY-COLOR-900);
-    white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	white-space: normal;
+	word-wrap: normal;
 }
 
     pre:before {
