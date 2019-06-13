@@ -466,11 +466,13 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 	font-weight: 400;
 	margin: 0 auto;
 }
+
 #chapter h1 {
     font-size: 3.6rem;
     border-bottom: 4px dashed var(--PRIMARY-COLOR-100);
 	padding: 0 0 .5em;
 	margin: .25em auto .5em;
+	color: var(--PRIMARY-COLOR-700);
 }
 
 
@@ -529,6 +531,7 @@ h1, h2, h3, h4, h5, h6 {
     text-rendering: optimizeLegibility;
     font-weight: 800;
 	line-height: 1.1;
+	color: var(--PRIMARY-COLOR-900);
 }
 
 h1 {
