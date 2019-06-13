@@ -450,6 +450,10 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 	    background: white;
 	}
 
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 #chapter {
 	padding: 4vw 1rem;
 	max-width: 600px;
@@ -539,17 +543,17 @@ h1 {
 }
 
 blockquote {
-    border-left: 10px solid var(--PRIMARY-COLOR-100);
+    border-left: .25rem dashed var(--PRIMARY-COLOR-300);
+	padding-left: 1.5rem;
+	margin-left: 1.25rem;
+	font-family: var(--serif);
 }
-blockquote p {
-    font-size: 1.1rem;
-    color: #999;
-}
+
 blockquote cite {
     display: block;
     text-align: right;
-    color: #666;
-    font-size: 1.2rem;
+    opacity: .7;
+    font-size: .8em;
 }
 div.notices {
     margin: 2rem 0;
@@ -1102,10 +1106,6 @@ td {
 }
 #github-contrib i {
     vertical-align: middle;
-}
-
-.featherlight img {
-    margin: 0 !important;
 }
 
 #top-bar {
