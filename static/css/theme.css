@@ -834,26 +834,42 @@ code + .copy-to-clipboard {
     height: 21px;
     top: 0;
 }
+
+
 pre {
-    padding: 1rem;
-    margin: 2rem 0;
-    background: #282c34;
-    border: 0;
-    border-radius: 2px;
-    line-height: 1.15;
+    border: 3px dashed var(--PRIMARY-COLOR-300);
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+    line-height: 1.3;
+    background: var(--PRIMARY-COLOR-100);
+    overflow: visible;
+    margin: 3em auto 2em;
+    color: var(--PRIMARY-COLOR-900);
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
-pre code {
-    color: whitesmoke;
-    background: inherit;
-    white-space: inherit;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    font-size: 15px;
-}
+
+    pre:before {
+        content: "FIELDWORK";
+        position: absolute;
+        font-size: 12px;
+        padding: 3px 6px;
+        top: -14px;
+        left: 18px;
+        font-weight: bold;
+        background: var(--PRIMARY-COLOR-300);
+        border-radius: 8px;
+        color: var(--PRIMARY-COLOR-900);
+        border: 2px solid white;
+    }
+
 hr {
 	border: none;
-    border-bottom: 4px solid var(--PRIMARY-COLOR-100);
+    border-bottom: 4px solid var(--PRIMARY-COLOR-300);
 	margin: 0;
 }
 .page-title {
