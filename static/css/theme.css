@@ -81,10 +81,6 @@ a:hover {
     width: 100%;
 }
 
-pre {
-    position: relative;
-    color: #ffffff;
-}
 .bg {
     background: #fff;
     border: 1px solid #eaeaea;
@@ -841,6 +837,11 @@ pre {
         border: 2px solid white;
     }
 
+	pre code {
+		font-family: var(--sans-serif);
+		color: color: var(--PRIMARY-COLOR-900);
+	}
+
 hr {
 	border: none;
     border-bottom: 4px solid var(--PRIMARY-COLOR-300);
@@ -873,9 +874,7 @@ hr {
 #body-inner .tabs-wrapper.ui-theme-badges .tabs-nav li.current a {
     background: #4d5257;
 }
-#body-inner pre {
-    white-space: pre-wrap;
-}
+
 .tabs-wrapper pre {
     margin: 1rem 0;
     border: 0;
