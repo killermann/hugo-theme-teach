@@ -843,10 +843,16 @@ pre {
         color: var(--PRIMARY-COLOR-900);
     }
 
+	code {
+		background: var(--PRIMARY-COLOR-100);
+		color: var(--PRIMARY-COLOR-900);
+	    padding: .25em .5em;
+	    border-radius: 4px;
+	}
+
 	pre code {
 		font-size: .8em;
 		font-family: var(--sans-serif);
-		color: var(--PRIMARY-COLOR-900);
 	}
 
 hr {
