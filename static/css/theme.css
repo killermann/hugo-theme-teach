@@ -613,34 +613,67 @@ div.notices.tip p:first-child:after {
 
 
 .btn {
-  display: inline-block;
-  padding: .5em 2em;
-  margin-bottom: 0;
-  font-size: .8em;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  font-weight: 500;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 2px solid var(--PRIMARY-COLOR-500);
-  color: var(--PRIMARY-COLOR-900);
-  border-radius: 100px;
-  -webkit-transition: all 0.15s;
-     -moz-transition: all 0.15s;
-          transition: all 0.15s;
+	display: inline-block;
+	padding: .5em 2em;
+	margin-bottom: 0;
+	font-size: .8em;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	font-weight: 500;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	  touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	 -moz-user-select: none;
+	  -ms-user-select: none;
+	      user-select: none;
+	background-image: none;
+	border: 2px dashed var(--PRIMARY-COLOR-500);
+	color: var(--PRIMARY-COLOR-900);
+	border-radius: 100px;
+	-webkit-transition: all 0.15s;
+	 -moz-transition: all 0.15s;
+	      transition: all 0.15s;
+}
+
+.btn-cta {
+	border: 2px solid var(--PRIMARY-COLOR-500);
+    color: var(--PRIMARY-COLOR-100);
+	background: var(--PRIMARY-COLOR-900);
 }
 
 .btn-icon {
 	padding: .5em 1em .5em 2em;
+}
+
+.pulse {
+	-webkit-box-shadow: 0 0 0 rgba(63,169,245,0);
+    box-shadow: 0 0 0 rgba(63,169,245,0);
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
+    border-radius: 500px;
+    -moz-border-radius: 500px;
+    -webkit-border-radius: 500px;
+}
+
+@keyframes pulse {
+	0% {
+    -webkit-box-shadow: 0 0 0 0 var(--PRIMARY-COLOR-100);
+    box-shadow: 0 0 0 0 var(--PRIMARY-COLOR-100);
+	}
+
+	70% {
+	    -webkit-box-shadow: 0 0 0 1em var(--PRIMARY-COLOR-500);
+	    box-shadow: 0 0 0 1em var(--PRIMARY-COLOR-500);
+	}
+
+	100% {
+	    -webkit-box-shadow: 0 0 0 0 var(--PRIMARY-COLOR-500);
+	    box-shadow: 0 0 0 0 var(--PRIMARY-COLOR-500);
+	}
 }
 
 .btn:focus {
