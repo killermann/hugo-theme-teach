@@ -1176,9 +1176,9 @@ td {
 	}
 
 	#sidebar-toggle-span {
-		position: absolute;
-		left: calc(-5.2rem);
-		top: -.5rem;
+		position: fixed;
+		left: 280px;
+		top: 40px;
 		background: white;
 		border-radius: 100px;
 		margin: 5px;
@@ -1194,8 +1194,12 @@ td {
 		display: none !important;
 	}
 
+	.sidebar-hidden #sidebar-toggle-span {
+		left:  calc(3rem - 20px);
+	}
+
 	.sidebar-hidden #sidebar-toggle-span .fa-chevron-left {
-		transform: rotate(180deg);
+		transform: rotate(90deg);
 	}
 
 #body #breadcrumbs {
@@ -1233,8 +1237,7 @@ td {
     }
 
 	#sidebar-toggle-span {
-		top: 40px;
-		left: -20px;
+		left: 210px;
 	}
 
     #body {
@@ -1249,6 +1252,7 @@ td {
         width: calc(100vw - 40px);
         right: -100vw;
 		left: auto;
+		font-size: .8em;
     }
 
 	#sidebar-toggle-span {
