@@ -635,7 +635,7 @@ div.notices.tip p:first-child:after {
 	  -ms-user-select: none;
 	      user-select: none;
 	background-image: none;
-	border: 2px dashed var(--PRIMARY-COLOR-500);
+	border: 2px solid var(--PRIMARY-COLOR-500);
 	color: var(--PRIMARY-COLOR-900);
 	border-radius: 100px;
 	-webkit-transition: all 0.15s;
