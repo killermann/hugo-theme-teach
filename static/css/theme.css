@@ -138,16 +138,6 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     fill: #fff;
 }
 
-@media only all and (max-width: 47.938em) {
-    #sidebar-toggle-span {
-        display: inline;
-    }
-
-	#sidebar-toggle-span a:after{
-		display: none !important;
-	}
-}
-
 #sidebar {
     background-color: var(--PRIMARY-COLOR-100);
     position: fixed;
@@ -1254,6 +1244,7 @@ td {
 
 	#sidebar-toggle-span {
 		position: relative;
+		display:inline-block;
 		top: auto;
 		left: auto;
 		box-shadow: none;
