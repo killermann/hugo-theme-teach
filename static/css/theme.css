@@ -128,7 +128,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #header span {
 	font-weight: 900;
 	color: white;
-	font-size: 28px;
+	font-size: 24px;
 	margin: 0 .25em;
 	letter-spacing: .04em;
 	text-rendering: optimizeLegibility;
@@ -137,10 +137,6 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #header #logo-svg path {
     fill: #fff;
 }
-/*
-#sidebar-toggle-span {
-    display: none;
-} */
 
 @media only all and (max-width: 47.938em) {
     #sidebar-toggle-span {
@@ -353,6 +349,8 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #body {
     position: relative;
     margin-left: 300px;
+	z-index: 1000;
+	background: white;
 }
 
 #body img, #body .video-container {
@@ -1169,6 +1167,10 @@ td {
 		display: none;
 	}
 
+	#top-bar .far:after {
+		display: none;
+	}
+
 	.sidebar-hidden #top-bar .fa-bars {
 		display: none !important;
 	}
@@ -1195,7 +1197,9 @@ td {
 	overflow: hidden;
 }
 
-
+#sidebar .fa-history {
+	margin-right: .75rem;
+}
 
 @media only all and (max-width: 59.938em) {
 
@@ -1205,16 +1209,12 @@ td {
 		right: auto;
     }
 
-	.sidebar-hidden #sidebar {
-		left: -170px;
-	}
-
     #body {
         margin-left: 230px;
     }
 
 	.sidebar-hidden #body {
-		margin-left: 60px;
+		margin-left: 3rem;
 	}
 }
 
