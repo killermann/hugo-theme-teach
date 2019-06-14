@@ -384,6 +384,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 	box-shadow: 0px 0px 50px 0px rgba(0,0,40,.3);
 	min-height: 100vh;
 	position: relative;
+	overflow: visible;
 }
 
 .entry-footer {
@@ -1246,12 +1247,22 @@ td {
 
 	#sidebar-toggle-span {
 		position: relative;
+		top: auto;
+		left: auto;
 	}
 
 	.sidebar-hidden #sidebar {
 		right: 0;
 		z-index: 99999;
 		box-shadow: 0px -10px 40px rgba(0,0,0,.3);
+	}
+
+	#top-bar .fa-bars {
+		display: inline-block;
+	}
+
+	#top-bar .fa-chevron-left {
+		display: none;
 	}
 
 	.sidebar-hidden #top-bar .fa-bars {
@@ -1272,7 +1283,6 @@ td {
 	}
 
     .sidebar-hidden #body {
-        margin-left: calc(100vw - 60px);
         overflow: hidden;
     }
 
