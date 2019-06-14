@@ -257,7 +257,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 	}
 
 	#sidebar ul.topics > li > a {
-	    font-size: 1.1rem;
+	    font-size: 1.1em;
 		font-weight: 700;
 	}
 	#sidebar ul.topics > li > a b {
@@ -1240,8 +1240,9 @@ td {
 @media only all and (max-width: 47.938em) {
 
 	#sidebar {
-        width: calc(100vw - 60px);
+        width: calc(100vw - 40px);
         right: -100vw;
+		left: auto;
     }
 
 	#sidebar-toggle-span {
