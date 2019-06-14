@@ -59,6 +59,9 @@
         {{ if .Params.chapter }}
           <div id="chapter">
         {{ end }}
+        {{ if .Params.checkpoint }}
+          <div id="checkpoint">
+        {{ end }}
         <div id="body-inner">
           {{if and (not .IsHome) (not .Params.chapter) }}
             <h1 class="entry-title type-wrap">

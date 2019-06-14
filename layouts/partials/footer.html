@@ -1,6 +1,9 @@
             {{ if .Params.chapter }}
                 </div> <!-- end chapter-->
             {{ end }}
+            {{ if .Params.checkpoint }}
+                </div> <!-- end checkpoint-->
+            {{ end }}
             </div>
             {{ partial "custom-comments.html" . }}
         </div>
