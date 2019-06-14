@@ -1176,6 +1176,7 @@ td {
 	}
 
 	#sidebar-toggle-span {
+		display: none;
 		position: fixed;
 		left: 280px;
 		top: 40px;
@@ -1262,6 +1263,10 @@ td {
 		right: 0;
 		z-index: 99999;
 		box-shadow: 0px -10px 40px rgba(0,0,0,.3);
+	}
+
+	.sidebar-hidden #sidebar-toggle-span {
+		left: auto;
 	}
 
 	#top-bar .fa-bars {
