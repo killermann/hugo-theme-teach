@@ -46,11 +46,11 @@ jQuery(document).ready(function() {
         jQuery(document.body).toggleClass('sidebar-hidden');
         sidebarStatus = (jQuery(document.body).hasClass('sidebar-hidden') ? 'closed' : 'open');
 
-        if (localStorage.getItem("toggled") != "yes") {
-            localStorage.setItem("toggled", "yes");
-        } else{
-            localStorage.setItem("toggled", "no");
-        }
+        // if (localStorage.getItem("toggled") != "yes") {
+        //     localStorage.setItem("toggled", "yes");
+        // } else{
+        //     localStorage.setItem("toggled", "no");
+        // }
 
         return false;
     });
