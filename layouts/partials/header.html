@@ -18,6 +18,12 @@
 
     </head>
     <body class="{{ if .IsHome }}home{{ end }}" data-url="{{ .RelPermalink }}">
+        <script>
+            // Remember Menu State
+            if ( localStorage.getItem("toggled") === "yes") {
+                document.body.classList.add("sidebar-hidden");
+            }
+        </script>
         {{ partial "menu.html" . }}
         <main id="body">
         <div id="overlay"></div>
