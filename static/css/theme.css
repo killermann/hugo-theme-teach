@@ -1216,10 +1216,6 @@ td {
     padding: 0 0.1rem;
 }
 
-.sidebar-hidden {
-	overflow: hidden;
-}
-
 	.sidebar-hidden #body {
 		margin-left: 3rem;
 	}
@@ -1294,7 +1290,6 @@ td {
 	}
 
     .sidebar-hidden #body {
-        overflow: hidden;
 		margin-left: 0;
     }
 
