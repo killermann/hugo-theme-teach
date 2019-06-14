@@ -1159,7 +1159,6 @@ td {
 	align-items: center;
 	position: relative;
 	z-index: 9999;
-	padding: 0 10px;
 }
 
 	#top-bar .far {
@@ -1249,6 +1248,7 @@ td {
 		position: relative;
 		top: auto;
 		left: auto;
+		box-shadow: none;
 	}
 
 	.sidebar-hidden #sidebar {
@@ -1284,6 +1284,7 @@ td {
 
     .sidebar-hidden #body {
         overflow: hidden;
+		margin-left: 0;
     }
 
     .sidebar-hidden #overlay {
