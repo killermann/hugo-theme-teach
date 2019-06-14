@@ -291,7 +291,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     display: block;
 }
 #sidebar ul li > a {
-    padding: .5em 3rem;
+    padding: .6em 3rem;
 	position: relative;
 }
 
@@ -1156,7 +1156,6 @@ td {
 	position: relative;
 	z-index: 9999;
 	padding: 10px;
-	line-height: 40px;
 }
 
 	#top-bar .far {
@@ -1175,7 +1174,7 @@ td {
 	}
 
 	.sidebar-hidden #top-bar .fa-times {
-		display: block !important;
+		display: inline-block !important;
 	}
 
 #body #breadcrumbs {
@@ -1196,20 +1195,26 @@ td {
 	overflow: hidden;
 }
 
-	.sidebar-hidden #sidebar {
-		left: 0;
-	}
+
 
 @media only all and (max-width: 59.938em) {
-    #sidebar {
+
+	#sidebar {
         width: 230px;
+		left: 0;
+		right: auto;
     }
+
+	.sidebar-hidden #sidebar {
+		left: -170px;
+	}
+
     #body {
         margin-left: 230px;
     }
 
-	#body .padding {
-		box-shadow: none;
+	.sidebar-hidden #body {
+		margin-left: 60px;
 	}
 }
 
@@ -1217,8 +1222,14 @@ td {
 
 	#sidebar {
         width: calc(100vw - 60px);
-        left: -100vw;
+        right: -100vw;
     }
+
+	.sidebar-hidden #sidebar {
+		right: 0;
+		z-index: 99999;
+		box-shadow: 0px -10px 40px rgba(0,0,0,.3);
+	}
 
     #body {
         margin-left: 0;
