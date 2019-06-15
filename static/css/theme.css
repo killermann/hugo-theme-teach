@@ -503,10 +503,12 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 
 	#checkpoint .type-wrap ul {
 		margin: 1em auto 2em;
+		list-style: none;
+		line-height: 1.2;
 	}
 
 	#checkpoint .type-wrap li + li {
-		margin-top: 1em;
+		margin-top: 1.2em;
 	}
 
 	.disabled {

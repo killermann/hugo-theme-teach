@@ -63,7 +63,7 @@
           <div id="checkpoint">
         {{ end }}
         <div id="body-inner">
-          {{if and (not .IsHome) (not .Params.chapter) }}
+          {{if and (not .IsHome) (not .Params.chapter) (not .Params.checkpoint) }}
             <h1 class="entry-title type-wrap">
               {{ if eq .Kind "taxonomy" }}
                 {{.Kind}} ::
