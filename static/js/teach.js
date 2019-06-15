@@ -180,6 +180,10 @@ jQuery(document).ready(function() {
     var checkBoxes = $('input.checkpoint-checkbox'),
         submitButton = $('.nav-next');
 
+    if(checkBoxes.is(":not(:checked)")) {
+        submitButton.addClass('disabled');
+    }
+
     checkBoxes.change(function () {
         submitButton.attr("disabled", checkBoxes.is(":not(:checked)"));
         if(checkBoxes.is(":not(:checked)")) {
