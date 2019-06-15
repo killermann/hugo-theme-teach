@@ -177,6 +177,18 @@ jQuery(document).ready(function() {
         $(document).ready($.proxy(anchorScrolls, 'init'));
     })(window.document, window.history, window.location);
 
+    var checkBoxes = $('input.checkpoint-checkbox'),
+        submitButton = $('.nav-next');
+
+    checkBoxes.change(function () {
+        submitButton.attr("disabled", checkBoxes.is(":not(:checked)"));
+        if(checkBoxes.is(":not(:checked)")) {
+            submitButton.addClass('disabled');
+        } else {
+            submitButton.removeClass('disabled');
+        }
+    });
+
 });
 
 jQuery(window).on('load', function() {

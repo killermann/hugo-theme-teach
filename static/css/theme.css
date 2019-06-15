@@ -449,12 +449,14 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 		left: -2.5em;
 		height: 2em;
 		width: 2em;
+		background: white;
 	}
 
 	img {
 		max-width: 100%;
 		height: auto;
 	}
+
 #chapter {
 	padding: 4vw 1rem;
 	max-width: 600px;
@@ -498,6 +500,21 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 		top: calc(50% - 2px);
 		left: 10%;
 	}
+
+	#checkpoint .type-wrap ul {
+		margin: 1em auto 2em;
+	}
+
+	#checkpoint .type-wrap li + li {
+		margin-top: 1em;
+	}
+
+	.disabled {
+		filter: grayscale(100%);
+		cursor: not-allowed;
+		opacity: .6;
+	}
+
 
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
     #chapter h1 {
