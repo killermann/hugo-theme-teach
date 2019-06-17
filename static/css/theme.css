@@ -672,8 +672,8 @@ div.notices.tip p:first-child:after {
 	color: var(--PRIMARY-COLOR-900);
 	border-radius: 100px;
 	-webkit-transition: all 0.15s;
-	 -moz-transition: all 0.15s;
-	      transition: all 0.15s;
+	   -moz-transition: all 0.15s;
+	        transition: all 0.15s;
 }
 
 .btn-cta {
@@ -694,6 +694,9 @@ div.notices.tip p:first-child:after {
     border-radius: 500px;
     -moz-border-radius: 500px;
     -webkit-border-radius: 500px;
+	-webkit-transition: .2s;
+	   -moz-transition: .2s;
+			transition: .2s;
 }
 
 @keyframes pulse {
@@ -1203,7 +1206,9 @@ td {
 		height: 30px;
 		line-height: 30px;
 		display: inline-block;
-		transition: .25s ease-in-out;
+		-webkit-transition: .25s ease-in-out;
+		   -moz-transition: .25s ease-in-out;
+		        transition: .25s ease-in-out;
 	}
 
 	#top-bar .fa-times, #top-bar .fa-bars {
@@ -1219,7 +1224,9 @@ td {
 		border-radius: 100px;
 		margin: 5px;
 		box-shadow: 0px 0px 7px rgba(0,0,20,.25);
-		transition: .25s ease-in-out;
+		-webkit-transition: .25s ease-in-out;
+		   -moz-transition: .25s ease-in-out;
+		        transition: .25s ease-in-out;
 	}
 
 		#sidebar-toggle-span .far {
