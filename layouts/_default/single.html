@@ -53,8 +53,8 @@
 	{{end}}
 </nav>
 {{end}}
+{{ if (not .Params.disableFooterNav) }}
 <footer class="entry-footer">
-	{{ if (not .Params.disableFooterNav) }}
 		{{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
 			{{ $File := .File }}
 			{{ $Site := .Site }}
@@ -75,6 +75,6 @@
 				</a>
 			</div>
 		{{ end }}
-	{{ end }}
 </footer>
+{{ end }}
 {{ partial "footer.html" . }}
