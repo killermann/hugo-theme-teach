@@ -27,8 +27,8 @@
 
 })(jQuery, 'smartresize');
 
+InstantClick.on('change', function() { // Replaces jQuery(window).on('load', function() {
 
-jQuery(document).ready(function() {
     jQuery('#sidebar .category-icon').on('click', function() {
         $( this ).toggleClass("fa-angle-down fa-angle-right") ;
         $( this ).parent().parent().children('ul').toggle() ;
@@ -192,10 +192,6 @@ jQuery(document).ready(function() {
             submitButton.removeClass('disabled');
         }
     });
-
-});
-
-jQuery(window).on('load', function() {
 
     // store this page in session
     localStorage.setItem(jQuery('body').data('url'), 1);
