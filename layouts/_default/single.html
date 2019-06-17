@@ -54,7 +54,7 @@
 </nav>
 {{end}}
 <footer class="entry-footer">
-	{{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
+	{{ if and (or .IsPage .IsSection) .Site.Params.editURL (not .Params.disableFooterNav) }}
 		{{ $File := .File }}
 		{{ $Site := .Site }}
 		{{with $File.Path }}
