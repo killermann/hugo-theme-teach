@@ -488,7 +488,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 		color: var(--PRIMARY-COLOR-900);
 	}
 
-	#chapter h1, h3, h5, p {
+	#chapter h1, #chapter h3, #chapter h5, #chapter p {
 		text-align: center;
 	}
 
