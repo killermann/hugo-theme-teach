@@ -1217,11 +1217,11 @@ td {
 }
 
 	#top-bar .far {
-		font-size: 28px;
+		font-size: 22px;
 		text-align: center;
-		width: 30px;
-		height: 30px;
-		line-height: 30px;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
 		display: inline-block;
 		-webkit-transition: .25s ease-in-out;
 		   -moz-transition: .25s ease-in-out;
