@@ -424,6 +424,10 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 	padding:1.5rem;
 }
 
+	#body-inner ul {
+		list-style: none;
+	}
+
 	.entry-title {
 		margin: 4vw auto;
 	}
