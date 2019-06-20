@@ -4,19 +4,16 @@
         <meta name="robots" content="noindex">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {{ .Hugo.Generator }}
-        {{ partial "meta.html" . }}
-        {{ partial "favicon.html" . }}
+        {{- .Hugo.Generator -}}
+        {{- partial "meta.html" . -}}
+        {{- partial "favicon.html" . -}}
         <title>{{ .Title }} | {{ .Site.Title }}</title>
-
-        {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
-
+        {{- $assetBusting := not .Site.Params.disableAssetsBusting -}}
         <link href="{{"css/theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
         {{with .Site.Params.themeVariant}}
         <link href="{{(printf "css/theme-%s.css" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
         {{end}}
         {{ partial "custom-header.html" . }}
-
     </head>
     <body class="{{ if .IsHome }}home{{ end }}" data-url="{{ .RelPermalink }}">
         <!-- <script>
