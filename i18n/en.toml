@@ -25,6 +25,9 @@ other = "Back"
 [Next]
 other = "Next"
 
+[Done]
+other = "Done"
+
 [Go-to-homepage]
 other = "Go to homepage"
 
