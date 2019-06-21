@@ -72,7 +72,7 @@ a:hover {
 #body a.highlight:after {
     display: block;
     content: "";
-    height: .1em;
+    height: 2px;
     width: 0%;
     background-color: currentColor !important;
     -webkit-transition: width 0.25s ease-out;
