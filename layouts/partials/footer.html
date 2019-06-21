@@ -14,10 +14,9 @@
     {{ partial "custom-footer.html" . }}
     <script src="{{"js/teach.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
     {{ partial "custom-footer.html" . }}
-    <script data-no-instant>InstantClick.init();</script>
     {{- if .Params.typeform }}
-    <script data-no-instant src="https://embed.typeform.com/embed.js"></script>
+    <script data-no-instant> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
     {{ end -}}
-
+    <script data-no-instant>InstantClick.init();</script>
   </body>
 </html>
