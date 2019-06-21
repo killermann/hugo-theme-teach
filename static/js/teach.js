@@ -72,7 +72,7 @@ InstantClick.on('change', function() { // Replaces jQuery(window).on('load', fun
 
     jQuery('input, textarea').keydown(function (e) {
          //  left and right arrow keys
-         if (e.which == '37' || e.which == '39' || e.which == '68') {
+         if (e.which == '37' || e.which == '39' || e.which == '68' || e.which == '82') {
              e.stopPropagation();
          }
      });
@@ -86,9 +86,13 @@ InstantClick.on('change', function() { // Replaces jQuery(window).on('load', fun
       if(e.which == '39') {
         jQuery('.nav .nav-next').click();
       }
-      // next links - right arrow key
+      // discourse link - 'd' key
       if(e.which == '68') {
         jQuery('.nav .discourse-link').click();
+      }
+      // reply link - 'r' key
+      if(e.which == '82') {
+        jQuery('.nav .reply-link').click();
       }
     });
 
