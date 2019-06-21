@@ -92,7 +92,7 @@ InstantClick.on('change', function() { // Replaces jQuery(window).on('load', fun
       }
       // reply link - 'r' key
       if(e.which == '82') {
-        jQuery('.nav .discourse-link').click();
+        jQuery('.nav .reply-link').click();
       }
     });
 
