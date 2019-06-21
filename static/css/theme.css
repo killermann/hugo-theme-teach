@@ -461,7 +461,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 		position: absolute;
 		margin-top: -.2em;
 		font-size: 1.4em;
-		left: -1.5em;
+		left: -1.2em;
 	}
 
 	li > input[type="checkbox"]{
