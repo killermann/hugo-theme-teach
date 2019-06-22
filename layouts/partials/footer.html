@@ -14,6 +14,9 @@
     {{ partial "custom-footer.html" . }}
     <script src="{{"js/teach.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
     {{ partial "custom-footer.html" . }}
+    {{- if .Params.typeform }}
+    <script src="{{"js/typeform.embed.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
+    {{ end -}}
     <script data-no-instant>InstantClick.init();</script>
   </body>
 </html>
