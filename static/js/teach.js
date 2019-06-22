@@ -27,7 +27,7 @@
 
 })(jQuery, 'smartresize');
 
-InstantClick.on('change', function() { // Replaces jQuery(window).on('load', function() {
+jQuery(window).on('load', function() { // Replaces  InstantClick.on('change', function() {
 
     jQuery('#sidebar .category-icon').on('click', function() {
         $( this ).toggleClass("fa-angle-down fa-angle-right") ;
